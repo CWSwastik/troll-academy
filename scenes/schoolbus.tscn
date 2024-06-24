@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d06wklay8mbpt"]
+
+[ext_resource type="PackedScene" uid="uid://cugerpcos4qfv" path="res://assets/School/Classroom/GLTF/schoolbus.glb" id="1_c2u3x"]
+
+[node name="SchoolBus" instance=ExtResource("1_c2u3x")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2.62371, 0)
+
+[node name="schoolbus" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.02028, 0)

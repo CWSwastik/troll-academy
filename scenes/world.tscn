@@ -1,0 +1,89 @@
+[gd_scene load_steps=18 format=3 uid="uid://bmsrqlgr7euy"]
+
+[ext_resource type="PackedScene" uid="uid://d06wklay8mbpt" path="res://scenes/schoolbus.tscn" id="1_ijnua"]
+[ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/Textures/textures/grids/Dark/texture_05.png" id="1_snllg"]
+[ext_resource type="PackedScene" uid="uid://dv025aumy3wcp" path="res://scenes/player.tscn" id="2_u5pms"]
+[ext_resource type="PackedScene" uid="uid://bbfh5om0ecq2m" path="res://assets/School/Classroom/GLTF/classroom_demoscene.glb" id="4_jmayy"]
+[ext_resource type="PackedScene" uid="uid://cph6ih3gybk7b" path="res://assets/School/ArtRoom/glb/demoscene.glb" id="4_piskf"]
+[ext_resource type="PackedScene" uid="uid://qq1txhbmqcos" path="res://scenes/classroom.tscn" id="5_pjqtx"]
+[ext_resource type="PackedScene" uid="uid://bw5f237p8omb6" path="res://scenes/teacher.tscn" id="6_06odu"]
+[ext_resource type="PackedScene" uid="uid://coqiqf7hu4lnk" path="res://assets/School/Cafeteria/GLTF/CAFETERIAdemoscene.glb" id="6_eu8g5"]
+[ext_resource type="PackedScene" uid="uid://dr1ahc4w1btt3" path="res://scenes/items/whoopie_cushion.tscn" id="7_dfryu"]
+[ext_resource type="PackedScene" uid="uid://170xaj3e0ttw" path="res://assets/School/ChemistryLab/GLTF/CHEMISTRYlabdemoscene.glb" id="7_imvvx"]
+[ext_resource type="PackedScene" uid="uid://pryyabufrmjp" path="res://assets/School/ComputerLab/GLTF/COMPUTERdemoscene.glb" id="8_vrp5g"]
+[ext_resource type="PackedScene" uid="uid://cnion7erb7fvw" path="res://assets/School/PrincipalOffice/GLTF/PRINCIPALOFFICEdemoscene.glb" id="9_228c6"]
+[ext_resource type="PackedScene" uid="uid://uf07cat36128" path="res://assets/School/Toilet/GLTF/toiletdemoscene.glb" id="10_l46js"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a4u6u"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_yldyk"]
+sky_material = SubResource("ProceduralSkyMaterial_a4u6u")
+
+[sub_resource type="Environment" id="Environment_vqypv"]
+background_mode = 2
+sky = SubResource("Sky_yldyk")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xn054"]
+albedo_texture = ExtResource("1_snllg")
+uv1_triplanar = true
+
+[node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vqypv")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.517058, 0)
+material_override = SubResource("StandardMaterial3D_xn054")
+use_collision = true
+size = Vector3(1000, 1, 1000)
+
+[node name="Player" parent="." instance=ExtResource("2_u5pms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.944, -0.01706, 7.38632)
+
+[node name="SchoolBus" parent="." instance=ExtResource("1_ijnua")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.56199, 2.30852, -46.9977)
+
+[node name="demo" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="demoscene" parent="demo" instance=ExtResource("4_piskf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.7545)
+
+[node name="classroom_demoscene" parent="demo" instance=ExtResource("4_jmayy")]
+
+[node name="CAFETERIAdemoscene2" parent="demo" instance=ExtResource("6_eu8g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8324, 0, 0)
+
+[node name="CHEMISTRYlabdemoscene2" parent="demo" instance=ExtResource("7_imvvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.97365, 0, 16.8278)
+
+[node name="COMPUTERdemoscene2" parent="demo" instance=ExtResource("8_vrp5g")]
+transform = Transform3D(-0.997531, 0, 0.0702267, 0, 1, 0, -0.0702267, 0, -0.997531, -13.9288, 0, -12.0507)
+
+[node name="PRINCIPALOFFICEdemoscene2" parent="demo" instance=ExtResource("9_228c6")]
+transform = Transform3D(0.0472111, 0, 0.998885, 0, 1, 0, -0.998885, 0, 0.0472111, 11.4164, 0, -12.1333)
+
+[node name="toiletdemoscene2" parent="demo" instance=ExtResource("10_l46js")]
+transform = Transform3D(-0.010751, 0, -0.999942, 0, 1, 0, 0.999942, 0, -0.010751, -10.6051, 0, 11.8747)
+
+[node name="Classroom" parent="." instance=ExtResource("5_pjqtx")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -47.007, 0.1, -5.715)
+
+[node name="Teacher" parent="." instance=ExtResource("6_06odu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.3747, 0.781397, 5.52293)
+
+[node name="WhoopieCushion" parent="." instance=ExtResource("7_dfryu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7693, 0.0889912, 11.5503)
+
+[node name="WhoopieCushion2" parent="." instance=ExtResource("7_dfryu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.689, 3.6362, 6.19037)

@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dr1ahc4w1btt3"]
+
+[ext_resource type="PackedScene" uid="uid://d0djfvmq7puji" path="res://assets/Items/whoopee_cushion/scene.gltf" id="1_7lrqr"]
+[ext_resource type="Script" path="res://scripts/whoopie_cushion.gd" id="1_dobdu"]
+[ext_resource type="AudioStream" uid="uid://dcweai2262w8d" path="res://assets/SFX/fart.mp3" id="3_fp5gp"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u8ekv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_doioi"]
+height = 0.293507
+radius = 0.430567
+
+[node name="WhoopieCushion" type="RigidBody3D"]
+mass = 0.1
+linear_damp = 0.3
+script = ExtResource("1_dobdu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.288234, -0.0802677)
+shape = SubResource("SphereShape3D_u8ekv")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_7lrqr")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702, -0.105374)
+shape = SubResource("CylinderShape3D_doioi")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_fp5gp")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

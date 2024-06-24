@@ -1,0 +1,11 @@
+Model Information:
+* title:	Whoopee Cushion!
+* source:	https://sketchfab.com/3d-models/whoopee-cushion-b9c944226f384597aa23931b598faf5f
+* author:	AndyBegg (https://sketchfab.com/AndyBegg)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Whoopee Cushion!" (https://sketchfab.com/3d-models/whoopee-cushion-b9c944226f384597aa23931b598faf5f) by AndyBegg (https://sketchfab.com/AndyBegg) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
