@@ -4,7 +4,8 @@
 [ext_resource type="Script" path="res://scripts/whoopie_cushion.gd" id="1_dobdu"]
 [ext_resource type="AudioStream" uid="uid://dcweai2262w8d" path="res://assets/SFX/fart.mp3" id="3_fp5gp"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_u8ekv"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ykdo4"]
+height = 0.46782
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_doioi"]
 height = 0.293507
@@ -17,7 +18,7 @@ script = ExtResource("1_dobdu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.288234, -0.0802677)
-shape = SubResource("SphereShape3D_u8ekv")
+shape = SubResource("CylinderShape3D_ykdo4")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_7lrqr")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

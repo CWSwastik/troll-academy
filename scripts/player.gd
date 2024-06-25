@@ -2,13 +2,15 @@ extends CharacterBody3D
 
 
 const SPEED = 4.0
-const JUMP_VELOCITY = 5.75
+const JUMP_VELOCITY = 6
 
 
 @export var SENS_HORIZONTAL := 0.1
 @export var SENS_VERTICAL := 0.1
 @onready var camera_mount = $CameraMount
 @onready var animation_player = $Visuals/Character/AnimationPlayer
+
+signal inventory_update 
 
 var inventory: Array = []
 
@@ -35,6 +37,7 @@ func _physics_process(delta):
 		item.global_position = $Visuals.global_position + Vector3(0, 1 + camera_mount.rotation.x, 2)
 		item.enable()
 		print("Placed " + item.item_name)
+		inventory_update.emit(inventory)
 	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -78,5 +81,5 @@ func _on_interact_ray_item_pick(item):
 	print("Picked up" + item.item_name)
 	inventory.append(item)
 	item.disable()
-
+	inventory_update.emit(inventory)
 	print(inventory, len(inventory))

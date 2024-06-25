@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ca47m3d1gl1k0"]
+
+[node name="DoorWall" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87463, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.89452)
+use_collision = true
+size = Vector3(0.3, 3.5, 3.4117)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00581932, -2.38419e-07, 2.36765)
+use_collision = true
+size = Vector3(0.3, 3.5, 4.7)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000853099, 1.06877, -0.79119)
+use_collision = true
+size = Vector3(0.3, 1.36261, 1.61731)

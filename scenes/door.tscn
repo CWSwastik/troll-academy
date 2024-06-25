@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bnpuo5knoyaw2"]
+
+[node name="Door" type="StaticBody3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0666647, 1.0064, -0.508923)
+size = Vector3(0.2, 2, 1)
