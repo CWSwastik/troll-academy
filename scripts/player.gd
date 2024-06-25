@@ -34,7 +34,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if Input.is_action_just_pressed("place") and len(inventory) > 0:
 		var item = inventory.pop_front()
-		item.global_position = $Visuals.global_position + Vector3(0, 1 + camera_mount.rotation.x, 2)
+		item.global_position = $Visuals.global_position + Vector3(0, 2 + camera_mount.rotation.x, 2)
 		item.enable()
 		print("Placed " + item.item_name)
 		inventory_update.emit(inventory)

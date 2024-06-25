@@ -6,10 +6,11 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ykdo4"]
 height = 0.46782
+radius = 0.636186
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_doioi"]
 height = 0.293507
-radius = 0.430567
+radius = 0.655206
 
 [node name="WhoopieCushion" type="RigidBody3D"]
 mass = 0.1

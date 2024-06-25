@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://babt46vyd5k1n" path="res://assets/School/Classroom/GLTF/chair.glb" id="5_pso4k"]
 [ext_resource type="PackedScene" uid="uid://bk3dskycwh8ox" path="res://assets/School/Classroom/GLTF/watch.glb" id="6_3n24n"]
 [ext_resource type="PackedScene" uid="uid://ca47m3d1gl1k0" path="res://scenes/door_wall.tscn" id="7_ybm3g"]
-[ext_resource type="PackedScene" uid="uid://qtxfhjeocw3d" path="res://assets/wall.tscn" id="8_l782g"]
+[ext_resource type="PackedScene" uid="uid://qtxfhjeocw3d" path="res://scenes/wall.tscn" id="8_l782g"]
 [ext_resource type="PackedScene" uid="uid://dxmchgx1bes55" path="res://assets/School/Classroom/GLTF/shelf_001.glb" id="9_0s6of"]
 
 [node name="Classroom" type="Node3D"]
