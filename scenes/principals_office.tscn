@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5yxhj1lqf0yb"]
+
+[ext_resource type="PackedScene" uid="uid://duqq3alnyxnu5" path="res://assets/School/PrincipalOffice/GLTF/PRINCIPALOFFICEwallsfloor.glb" id="1_4ym1g"]
+[ext_resource type="PackedScene" uid="uid://ca47m3d1gl1k0" path="res://scenes/door_wall.tscn" id="2_kttfr"]
+[ext_resource type="PackedScene" uid="uid://qtxfhjeocw3d" path="res://scenes/wall.tscn" id="3_tr3u6"]
+[ext_resource type="PackedScene" uid="uid://b02t5abyx2xq0" path="res://assets/School/PrincipalOffice/GLTF/PRINCIPALOFFICEdesk.glb" id="4_41qfp"]
+[ext_resource type="PackedScene" uid="uid://cef5r8x8edfxq" path="res://assets/School/PrincipalOffice/GLTF/PRINCIPALOFFICEdrawer.glb" id="4_mihvj"]
+[ext_resource type="PackedScene" uid="uid://boqwwv1v74eof" path="res://assets/School/PrincipalOffice/GLTF/PRINCIPALOFFICEprincipalchair.glb" id="6_apqol"]
+
+[node name="PrincipalsOffice" type="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="WallsFloor" parent="." instance=ExtResource("1_4ym1g")]
+
+[node name="DoorWall" parent="." instance=ExtResource("2_kttfr")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.04524, 1.50358, -3.64007)
+
+[node name="Wall" parent="." instance=ExtResource("3_tr3u6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15161, 1.48961, -0.328126)
+size = Vector3(0.3, 3.5, 6.37732)
+
+[node name="Objects" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.47224, -0.537528, 0)
+
+[node name="Drawer" parent="Objects" instance=ExtResource("4_mihvj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.68256, 2.60837, -5.86023)
+
+[node name="Desk" parent="Objects" instance=ExtResource("4_41qfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16016, 3.12689, 0)
+
+[node name="PrincipalChair" parent="Objects" instance=ExtResource("6_apqol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19739, 2.75707, 3.05128)

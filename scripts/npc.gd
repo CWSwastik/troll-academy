@@ -8,6 +8,7 @@ var chasing = false
 @onready var dest = player.global_position
 @onready var animation_player = $Visuals/AnimationPlayer
 @onready var nav = $NavigationAgent3D
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _physics_process(delta):
 	if Time.get_time_dict_from_system()["second"] % 12 == 0:
@@ -26,11 +27,13 @@ func _physics_process(delta):
 			animation_player.play("Walk")
 				
 	nav.target_position = dest
-	velocity = (nav.get_next_path_position() - global_position).normalized() * speed
-	if is_on_floor():
-		velocity.y = 0
-	else:
-		velocity.y = -1
+	var res = (nav.get_next_path_position() - global_position).normalized() * speed
+	velocity.x = res.x
+	velocity.z = res.z 
+	
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+		
 	# print(velocity)
 	rotation.y = lerp_angle(rotation.y, atan2(velocity.x, velocity.z), delta * 5.0)
 	move_and_slide()

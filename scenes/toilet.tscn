@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://c43dnb14n5soj"]
+
+[ext_resource type="PackedScene" uid="uid://cgwjgaawg6hng" path="res://assets/School/Toilet/GLTF/toiletwallsfloor.glb" id="1_3qrct"]
+[ext_resource type="PackedScene" uid="uid://qtxfhjeocw3d" path="res://scenes/wall.tscn" id="1_fqf4i"]
+[ext_resource type="PackedScene" uid="uid://ca47m3d1gl1k0" path="res://scenes/door_wall.tscn" id="3_tkxu6"]
+[ext_resource type="PackedScene" uid="uid://bty7b5u0oaj64" path="res://assets/School/Toilet/GLTF/toiletsink.glb" id="4_4nnvl"]
+[ext_resource type="PackedScene" uid="uid://dvdp48idi8dnp" path="res://assets/School/Toilet/GLTF/toiletpartition_001.glb" id="5_tt8jg"]
+[ext_resource type="PackedScene" uid="uid://dqeg55gedtjfy" path="res://assets/School/Toilet/GLTF/toiletdoor.glb" id="6_8ik40"]
+[ext_resource type="PackedScene" uid="uid://bqbph53bltd60" path="res://assets/School/Toilet/GLTF/toiletbasictoilet.glb" id="7_lbheg"]
+[ext_resource type="PackedScene" uid="uid://d0p6vhlh34acm" path="res://assets/School/Toilet/GLTF/toileturinal.glb" id="8_qv35b"]
+
+[node name="Toilet" type="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.0108185, 0.0528412, 0.0393105)
+
+[node name="Wall" parent="." instance=ExtResource("1_fqf4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75411, 1.48961, -1.44428)
+size = Vector3(0.3, 3.5, 8.74951)
+
+[node name="WallsFloor" parent="." instance=ExtResource("1_3qrct")]
+
+[node name="DoorWall" parent="." instance=ExtResource("3_tkxu6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.575023, 1.51236, -5.78465)
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="Sink" parent="Objects" instance=ExtResource("4_4nnvl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.1916, 1.06859, -3.66147)
+
+[node name="Sink2" parent="Objects" instance=ExtResource("4_4nnvl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.1916, 1.06859, -1.55027)
+
+[node name="Partition1" parent="Objects" instance=ExtResource("5_tt8jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.964746, 1.21138, 1.64998)
+
+[node name="Partition2" parent="Objects" instance=ExtResource("5_tt8jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.683338, 1.21138, 1.64998)
+
+[node name="Partition3" parent="Objects" instance=ExtResource("5_tt8jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59688, 1.21138, 1.64998)
+
+[node name="Door1" parent="Objects" instance=ExtResource("6_8ik40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.971119, 1.10335, 0.551426)
+
+[node name="Door2" parent="Objects" instance=ExtResource("6_8ik40")]
+transform = Transform3D(0.879649, 0, -0.475624, 0, 1, 0, 0.475624, 0, 0.879649, -0.706954, 1.10335, 0.551426)
+
+[node name="toiletbasictoilet2" parent="Objects" instance=ExtResource("7_lbheg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.7371, 0.637528, 1.88335)
+
+[node name="Urinal1" parent="Objects" instance=ExtResource("8_qv35b")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -4.69541, 0.985983, -3.20858)
+
+[node name="Urinal2" parent="Objects" instance=ExtResource("8_qv35b")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -4.69541, 0.985983, -4.64673)

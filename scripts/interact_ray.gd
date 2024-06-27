@@ -1,7 +1,7 @@
 extends RayCast3D
 @onready var prompt = $Prompt
 
-signal item_pick
+signal item_pick(item)
 
 func _ready():
 	add_exception(owner)

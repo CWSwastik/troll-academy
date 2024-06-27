@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1pj6eq07ersk"]
+
+[ext_resource type="PackedScene" uid="uid://dmrflkjigcji8" path="res://assets/School/Cafeteria/GLTF/CAFETERIAwallfloor.glb" id="1_82lor"]
+[ext_resource type="PackedScene" uid="uid://qtxfhjeocw3d" path="res://scenes/wall.tscn" id="1_osgbn"]
+[ext_resource type="PackedScene" uid="uid://2vim0gp6ut" path="res://assets/School/ChemistryLab/GLTF/CHEMESTRYtable.glb" id="2_m5j03"]
+[ext_resource type="PackedScene" uid="uid://ca47m3d1gl1k0" path="res://scenes/door_wall.tscn" id="3_phvbq"]
+[ext_resource type="PackedScene" uid="uid://dfe4mgbdsjma7" path="res://assets/School/ChemistryLab/GLTF/CHEMISTRYbarrel.glb" id="5_q145g"]
+[ext_resource type="PackedScene" uid="uid://crtsdadjdjf4e" path="res://assets/School/ChemistryLab/GLTF/CHEMISTRYfireextinguisher.glb" id="6_4k1t0"]
+[ext_resource type="PackedScene" uid="uid://ch52tjl2fsbim" path="res://assets/School/ChemistryLab/GLTF/CHEMISTRYcupboard_3.glb" id="6_an028"]
+
+[node name="ChemistryLab" type="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="Wall" parent="." instance=ExtResource("1_osgbn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.124035, 1.48961, -6.21931)
+
+[node name="Table" parent="." instance=ExtResource("2_m5j03")]
+transform = Transform3D(0.0107161, 0, -0.999943, 0, 1, 0, 0.999943, 0, 0.0107161, 0, 0.404427, -1.24467)
+
+[node name="Table3" parent="." instance=ExtResource("2_m5j03")]
+transform = Transform3D(0.0107161, 0, -0.999943, 0, 1, 0, 0.999943, 0, 0.0107161, 0, 0.404427, -4.24467)
+
+[node name="Table2" parent="." instance=ExtResource("2_m5j03")]
+transform = Transform3D(0.0107161, 0, -0.999943, 0, 1, 0, 0.999943, 0, 0.0107161, 2.25, 0.404427, -1.24467)
+
+[node name="Table4" parent="." instance=ExtResource("2_m5j03")]
+transform = Transform3D(0.0107161, 0, -0.999943, 0, 1, 0, 0.999943, 0, 0.0107161, 2.25, 0.404427, -4.24467)
+
+[node name="WallsFloor" parent="." instance=ExtResource("1_82lor")]
+
+[node name="DoorWall" parent="." instance=ExtResource("3_phvbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72739, 1.46044, -1.90511)
+
+[node name="Barrel1" parent="." instance=ExtResource("5_q145g")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -4.25, 0.25, 2)
+
+[node name="Barrel2" parent="." instance=ExtResource("5_q145g")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -4.5, 0.25, 1.5)
+
+[node name="Cupboard1" parent="." instance=ExtResource("6_an028")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.5471, 0.925094, -1.15256)
+
+[node name="Cupboard2" parent="." instance=ExtResource("6_an028")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.5471, 0.925094, -2.36039)
+
+[node name="FireExtinguisher" parent="." instance=ExtResource("6_4k1t0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 2.41343)

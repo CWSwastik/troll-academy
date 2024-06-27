@@ -7,10 +7,11 @@ const JUMP_VELOCITY = 6
 
 @export var SENS_HORIZONTAL := 0.1
 @export var SENS_VERTICAL := 0.1
+
 @onready var camera_mount = $CameraMount
 @onready var animation_player = $Visuals/Character/AnimationPlayer
 
-signal inventory_update 
+signal inventory_update(inventory)
 
 var inventory: Array = []
 
@@ -26,12 +27,22 @@ func _input(event):
 		rotate_y(deg_to_rad(-event.relative.x * SENS_HORIZONTAL))
 		camera_mount.rotate_x(deg_to_rad(-event.relative.y * SENS_VERTICAL))
 		camera_mount.rotation.x = clamp(
-			camera_mount.rotation.x, -0.5, 0.4
+			camera_mount.rotation.x, -0.5, 0.35
 		)
-		
+
 
 func _physics_process(delta):
 	# Add the gravity.
+
+	var change = Input.get_axis("look_down", "look_up") * 20
+	camera_mount.rotate_x(deg_to_rad(-change* SENS_VERTICAL))
+	camera_mount.rotation.x = clamp(
+		camera_mount.rotation.x, -0.5, 0.35
+	)
+
+	change = Input.get_axis("look_left", "look_right") * 20		
+	rotate_y(deg_to_rad(-change * SENS_HORIZONTAL))		
+
 	if Input.is_action_just_pressed("place") and len(inventory) > 0:
 		var item = inventory.pop_front()
 		item.global_position = $Visuals.global_position + Vector3(0, 2 + camera_mount.rotation.x, 2)
@@ -43,7 +54,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.

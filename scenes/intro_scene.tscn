@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0dp4bsk5dshm"]
+
+[ext_resource type="PackedScene" uid="uid://2qa5d1u22ooo" path="res://assets/School/Classroom/GLTF/TV.glb" id="1_b0s0h"]
+[ext_resource type="PackedScene" uid="uid://dr25byhwx2t4i" path="res://assets/Characters/Metic/Metic.gltf" id="1_luse2"]
+
+[node name="IntroScene" type="Node3D"]
+
+[node name="Metic" parent="." instance=ExtResource("1_luse2")]
+
+[node name="TV2" parent="." instance=ExtResource("1_b0s0h")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)

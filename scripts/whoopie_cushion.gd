@@ -1,19 +1,9 @@
-class_name Interactable
-extends Node3D
+extends Interactable
 
 const item_name = "Whoopie Cushion"
 var deflated = false
 
 signal whoopie_troll_sucess
-
-func disable():
-	self.visible = false
-	$CollisionShape3D.disabled = true
-	
-func enable():
-	self.visible = true
-	$CollisionShape3D.disabled = false
-
 
 func _on_area_3d_body_entered(body):
 	if not self.visible:
@@ -27,6 +17,7 @@ func _on_area_3d_body_entered(body):
 		tween.tween_property(self, "scale", scale, 1)
 		tween.tween_callback(inflate)
 		
+		body.velocity.y += 20
 		if body.name == "Teacher" or body.name == "NPC":
 			print(body.name)
 			whoopie_troll_sucess.emit()

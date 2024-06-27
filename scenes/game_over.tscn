@@ -19,9 +19,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -105.0
-offset_top = -38.5
+offset_top = -101.0
 offset_right = 105.0
-offset_bottom = 38.5
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -32,12 +32,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -26.5
-offset_top = -19.0
-offset_right = 26.5
-offset_bottom = 19.0
+offset_left = -81.0
+offset_top = -48.0
+offset_right = 77.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "GAME OVER
 You were detained..."
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -55.0
+offset_right = 85.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Return to Main Menu"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
