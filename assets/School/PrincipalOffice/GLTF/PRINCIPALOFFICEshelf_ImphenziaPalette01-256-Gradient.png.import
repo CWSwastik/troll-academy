@@ -3,20 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b147bqp74ftes"
-path="res://.godot/imported/PRINCIPALOFFICEshelf_ImphenziaPalette01-256-Gradient.png-a56411b159fbbc00fa25704c2d98a73a.ctex"
+path.s3tc="res://.godot/imported/PRINCIPALOFFICEshelf_ImphenziaPalette01-256-Gradient.png-a56411b159fbbc00fa25704c2d98a73a.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={}
 
 [deps]
 
 source_file="res://assets/School/PrincipalOffice/GLTF/PRINCIPALOFFICEshelf_ImphenziaPalette01-256-Gradient.png"
-dest_files=["res://.godot/imported/PRINCIPALOFFICEshelf_ImphenziaPalette01-256-Gradient.png-a56411b159fbbc00fa25704c2d98a73a.ctex"]
+dest_files=["res://.godot/imported/PRINCIPALOFFICEshelf_ImphenziaPalette01-256-Gradient.png-a56411b159fbbc00fa25704c2d98a73a.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -32,4 +33,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

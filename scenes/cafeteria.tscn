@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgkii7b7me1qu"]
+[gd_scene load_steps=11 format=3 uid="uid://bgkii7b7me1qu"]
 
 [ext_resource type="PackedScene" uid="uid://dmrflkjigcji8" path="res://assets/School/Cafeteria/GLTF/CAFETERIAwallfloor.glb" id="1_fs02i"]
 [ext_resource type="PackedScene" uid="uid://ca47m3d1gl1k0" path="res://scenes/door_wall.tscn" id="1_sg45r"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cjvjhdoofnujh" path="res://assets/School/Cafeteria/GLTF/CAFETERIAchair_001.glb" id="6_mrvfl"]
 [ext_resource type="PackedScene" uid="uid://c4m5l55vtasun" path="res://assets/School/Cafeteria/GLTF/CAFETERIAvendingmachine.glb" id="7_mgymj"]
 [ext_resource type="PackedScene" uid="uid://ca3wkv1wcodrk" path="res://assets/School/Cafeteria/GLTF/CAFETERIAshowcasetable.glb" id="8_yt4g7"]
+[ext_resource type="PackedScene" uid="uid://daia21v7e0vxe" path="res://assets/School/Cafeteria/GLTF/CAFETERIAtraycafet.glb" id="9_80i0b"]
+[ext_resource type="PackedScene" uid="uid://daj1j23rsdedf" path="res://assets/School/Cafeteria/GLTF/CAFETERIAcoffemaker.glb" id="10_pkx6d"]
 
 [node name="Cafeteria" type="Node3D"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
@@ -58,19 +60,31 @@ transform = Transform3D(-0.999903, -0.0139622, -8.74228e-08, -0.0139622, 0.99990
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.117263, 0.8119, -0.00648069)
 
 [node name="Chair" parent="Table3" instance=ExtResource("5_2ynv1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44552, -0.401912, 0.973474)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501244, -0.401912, 0.908333)
 
 [node name="Chair3" parent="Table3" instance=ExtResource("5_2ynv1")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.482301, -0.401912, -1.10768)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.54231, -0.401912, -0.898331)
 
 [node name="Chair2" parent="Table3" instance=ExtResource("6_mrvfl")]
-transform = Transform3D(0.999891, 0.0147824, 0, -0.0147824, 0.999891, 0, 0, 0, 1, -0.511904, -0.412137, 0.987702)
+transform = Transform3D(0.999891, 0.0147824, 0, -0.0147824, 0.999891, 0, 0, 0, 1, -0.629196, -0.412137, 0.907029)
 
 [node name="Chair4" parent="Table3" instance=ExtResource("6_mrvfl")]
-transform = Transform3D(-0.999903, -0.0139622, -8.74228e-08, -0.0139622, 0.999903, 0, 8.74143e-08, 1.22061e-09, -1, 0.420687, -0.412137, -1.13518)
+transform = Transform3D(-0.999903, -0.0139622, -8.74228e-08, -0.0139622, 0.999903, 0, 8.74143e-08, 1.22061e-09, -1, 0.467841, -0.412137, -0.906326)
 
 [node name="Vending" parent="." instance=ExtResource("7_mgymj")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.82497, 1.37945, -4.85625)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.82497, 1.37945, -5.15833)
 
 [node name="ShowCaseTable" parent="." instance=ExtResource("8_yt4g7")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.87763, 0.477283, 0.949103)
+
+[node name="CAFETERIAtraycafet2" parent="." instance=ExtResource("9_80i0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80431, 1.10958, 0.269389)
+
+[node name="CAFETERIAtraycafet3" parent="." instance=ExtResource("9_80i0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80431, 1.14736, 0.269389)
+
+[node name="CAFETERIAtraycafet4" parent="." instance=ExtResource("9_80i0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80431, 1.18579, 0.269389)
+
+[node name="CAFETERIAcoffemaker2" parent="." instance=ExtResource("10_pkx6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.69511, 1.25628, 1.15022)

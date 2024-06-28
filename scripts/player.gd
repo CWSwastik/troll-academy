@@ -10,6 +10,7 @@ const JUMP_VELOCITY = 6
 
 @onready var camera_mount = $CameraMount
 @onready var animation_player = $Visuals/Character/AnimationPlayer
+@onready var prompt = $CameraMount/InteractRay/Prompt
 
 signal inventory_update(inventory)
 
@@ -43,13 +44,39 @@ func _physics_process(delta):
 	change = Input.get_axis("look_left", "look_right") * 20		
 	rotate_y(deg_to_rad(-change * SENS_HORIZONTAL))		
 
-	if Input.is_action_just_pressed("place") and len(inventory) > 0:
-		var item = inventory.pop_front()
-		item.global_position = $Visuals.global_position + Vector3(0, 2 + camera_mount.rotation.x, 2)
-		item.enable()
-		print("Placed " + item.item_name)
-		inventory_update.emit(inventory)
-	
+	if len(inventory) > 0:
+		prompt.visible = true
+		prompt.text = "Tip: Place the item by pressing [X]"
+		if Input.is_action_just_pressed("place"):
+			var item = inventory.pop_front()
+			# Get the forward direction of the camera
+			var forward = - camera_mount.global_transform.basis.z.normalized()
+			
+			# Set the item's position in front of the player
+			item.global_position = $Visuals.global_position + forward * 2 + Vector3(0, 2, 0)
+			item.enable()
+			print("Placed " + item.item_name)
+			inventory_update.emit(inventory)
+			
+		elif inventory[0].is_usable:
+			prompt.text = "Tip: The item can be used by pressing [Q]"
+		
+			if Input.is_action_just_pressed("use"):
+				var item = inventory.pop_front()
+				inventory_update.emit(inventory)
+				
+				if item.item_name == "Water Bottle":
+					item.queue_free()
+					
+					var scene = preload("res://scenes/items/water_puddle.tscn")
+					var instance = scene.instantiate()
+					$"../Items".add_child(instance)
+					var forward = - camera_mount.global_transform.basis.z.normalized()
+					instance.global_position = $Visuals.global_position + forward * 2 + Vector3(0, 0.95, 0)
+					
+	else:
+		prompt.visible = false
+
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -57,8 +84,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:

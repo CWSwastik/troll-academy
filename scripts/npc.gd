@@ -1,3 +1,4 @@
+class_name NPC
 extends CharacterBody3D
 
 const SPEED = 2.5

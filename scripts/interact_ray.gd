@@ -7,8 +7,6 @@ func _ready():
 	add_exception(owner)
 	
 func _physics_process(delta):
-	prompt.text = ""
-	prompt.visible = false
 	if is_colliding():
 		var detected = get_collider()
 		

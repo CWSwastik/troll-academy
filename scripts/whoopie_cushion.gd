@@ -1,9 +1,11 @@
 extends Interactable
 
 const item_name = "Whoopie Cushion"
+const icon_path = "res://assets/ItemLogos/whoopee_cushion.png"
+const is_usable = false
+
 var deflated = false
 
-signal whoopie_troll_sucess
 
 func _on_area_3d_body_entered(body):
 	if not self.visible:
@@ -17,10 +19,10 @@ func _on_area_3d_body_entered(body):
 		tween.tween_property(self, "scale", scale, 1)
 		tween.tween_callback(inflate)
 		
-		body.velocity.y += 20
-		if body.name == "Teacher" or body.name == "NPC":
+		body.velocity.y += 15
+		if body.name == "Teacher" or body.name.begins_with("NPC"):
 			print(body.name)
-			whoopie_troll_sucess.emit()
+			Global.quest_complete(1)
 
 
 func inflate():

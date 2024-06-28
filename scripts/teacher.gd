@@ -1,3 +1,4 @@
+class_name Teacher
 extends CharacterBody3D
 
 const SPEED = 3

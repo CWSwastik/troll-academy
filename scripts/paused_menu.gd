@@ -23,8 +23,12 @@ func _on_resume_button_pressed():
 
 
 func _on_settings_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/settings_page.tscn")
+	$SettingsPage.visible = true
 
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+
+func _on_settings_page_back_button_pressed():
+	$SettingsPage.visible = false
