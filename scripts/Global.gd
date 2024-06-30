@@ -2,24 +2,40 @@ extends Node
 
 var quests = {
 	1: {
-		"name": "Whoopie Trouble",
-		"desc": "Troll someone with a Whoopie Cushion",
+		"name": "Whoopee Trouble",
+		"desc": "Troll someone with a Whoopee Cushion",
 		"logo": "res://assets/ItemLogos/whoopee_cushion.png"
 	},
 	2: {
-		"name": "Splash",
-		"desc": "Spill Water and make someone fall down",
+		"name": "Wet and Wild",
+		"desc": "Spill water and make someone fall down",
 		"logo": "res://assets/ItemLogos/water_bottle.png"
 	},
 	3: {
-		"name": "Laxatives ;)",
-		"desc": "Mix laxatives in cupcakes",
-		"logo": "res://assets/ItemLogos/laxatives.png"		
-	}
+		"name": "Cookie Catastrophe",
+		"desc": "Mix laxatives in a cookie",
+		"logo": "res://assets/ItemLogos/laxatives.png"
+	},
+	4: {
+		"name": "Broadcast Bandit",
+		"desc": "Hack the PA system to play a meme song",
+		"logo": "res://assets/ItemLogos/loudspeaker.png"
+	},
+	5: {
+		"name": "Sticky Situation",
+		"desc": "Glue items to desks in the classroom",
+		"logo": "res://assets/ItemLogos/glue.png"
+	},
+	6: {
+		"name": "Mouse Mayhem",
+		"desc": "Tape over the bottom of all the computer mice",
+		"logo": "res://assets/ItemLogos/mouse.png"
+	},
+
 }
 
 var completed_quests: Array[int] = []
-var active_quest_id = 1
+var active_quest_id = randi_range(1, 4)
 
 var current_quest:
 	get:

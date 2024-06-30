@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5yxhj1lqf0yb"]
+[gd_scene load_steps=14 format=3 uid="uid://b5yxhj1lqf0yb"]
 
 [ext_resource type="PackedScene" uid="uid://duqq3alnyxnu5" path="res://assets/School/PrincipalOffice/GLTF/PRINCIPALOFFICEwallsfloor.glb" id="1_4ym1g"]
 [ext_resource type="PackedScene" uid="uid://ca47m3d1gl1k0" path="res://scenes/door_wall.tscn" id="2_kttfr"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c75v3ft3v6v3u" path="res://assets/School/PrincipalOffice/GLTF/PRINCIPALOFFICEshelf.glb" id="7_x1pbu"]
 [ext_resource type="PackedScene" uid="uid://dbimim35owcx4" path="res://assets/School/PrincipalOffice/GLTF/PRINCIPALOFFICEchair.glb" id="9_4ikj0"]
 [ext_resource type="PackedScene" uid="uid://dnfkskwntf857" path="res://assets/School/PrincipalOffice/GLTF/PRINCIPALOFFICEnotebook_002.glb" id="9_y7pn3"]
+[ext_resource type="PackedScene" uid="uid://hhiqo58b2f48" path="res://assets/School/PrincipalOffice/GLTF/PRINCIPALOFFICEnotebook_001.glb" id="11_cc3xe"]
+[ext_resource type="PackedScene" uid="uid://b5tkuc2wcumhb" path="res://scenes/items/pa_mic.tscn" id="13_3cggw"]
 
 [node name="PrincipalsOffice" type="Node3D"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
@@ -28,7 +30,7 @@ size = Vector3(0.3, 3.5, 6.37732)
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.47224, -0.537528, 0)
 
 [node name="Telephone" parent="Objects" instance=ExtResource("4_7kiem")]
-transform = Transform3D(-1.2, 0, -1.81195e-07, 0, 1.2, 0, 1.81195e-07, 0, -1.2, -3.63863, 2.92529, 0)
+transform = Transform3D(-1.06605, 0, 0.550938, 0, 1.2, 0, -0.550938, 0, -1.06605, -0.599016, 2.92529, 0.233171)
 
 [node name="Drawer" parent="Objects" instance=ExtResource("4_mihvj")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.57963, 2.60837, -5.86023)
@@ -43,13 +45,22 @@ transform = Transform3D(0.997527, 0, -0.0702788, 0, 1, 0, 0.0702788, 0, 0.997527
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.76512, 2.99536, -1.82407)
 
 [node name="PRINCIPALOFFICEchair2" parent="Objects" instance=ExtResource("9_4ikj0")]
-transform = Transform3D(-1.29212, 0.135561, -0.045358, 0, 0.412496, 1.23282, 0.142948, 1.22535, -0.409995, -1.28894, 2.53942, -2.22364)
+transform = Transform3D(-1.2994, -0.0374124, 0.0125179, 0, 0.412496, 1.23282, -0.0394508, 1.23226, -0.412306, -1.31999, 2.53942, -2.35822)
 
 [node name="PRINCIPALOFFICEchair3" parent="Objects" instance=ExtResource("9_4ikj0")]
-transform = Transform3D(-1.29576, -0.099493, 0.0332899, 0, 0.412496, 1.23282, -0.104915, 1.2288, -0.411151, -3.18922, 2.48915, -2.10062)
+transform = Transform3D(-1.29576, -0.099493, 0.0332899, 0, 0.412496, 1.23282, -0.104915, 1.2288, -0.411151, -3.18922, 2.48915, -2.18896)
 
 [node name="PRINCIPALOFFICEnotebook_0022" parent="Objects" instance=ExtResource("9_y7pn3")]
 transform = Transform3D(1.32809, 0, 0.697263, 0, 1.5, 0, -0.697263, 0, 1.32809, -1.55437, 2.89283, 0)
 
+[node name="PRINCIPALOFFICEnotebook_0012" parent="Objects" instance=ExtResource("11_cc3xe")]
+transform = Transform3D(1.36522, 0, -0.31012, 0, 1.4, 0, 0.31012, 0, 1.36522, -0.948095, 2.87902, -0.187253)
+
+[node name="PRINCIPALOFFICEnotebook_0013" parent="Objects" instance=ExtResource("11_cc3xe")]
+transform = Transform3D(1.65777, 0, -0.376575, 0, 1.7, 0, 0.376575, 0, 1.65777, -3.04233, 2.82907, -5.50274)
+
 [node name="Plant" parent="Objects" instance=ExtResource("7_f2bku")]
 transform = Transform3D(1.61908, 0, 1.17413, 0, 2, 0, -1.17413, 0, 1.61908, 3.42757, 1.19241, 4.25186)
+
+[node name="PAMic" parent="." instance=ExtResource("13_3cggw")]
+transform = Transform3D(0.37868, 0, 0.326499, 0, 0.5, 0, -0.326499, 0, 0.37868, -4.4982, 0.884501, 0.182025)

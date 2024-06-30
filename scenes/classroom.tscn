@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://qq1txhbmqcos"]
+[gd_scene load_steps=18 format=3 uid="uid://qq1txhbmqcos"]
 
 [ext_resource type="PackedScene" uid="uid://dnu8wdsfpm2ea" path="res://assets/School/Classroom/GLTF/blackboardbig.glb" id="1_83tq4"]
 [ext_resource type="PackedScene" uid="uid://bne3yq7fa5lr5" path="res://assets/School/Classroom/GLTF/blackboardlittle.glb" id="2_sysqn"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dxmchgx1bes55" path="res://assets/School/Classroom/GLTF/shelf_001.glb" id="9_0s6of"]
 [ext_resource type="PackedScene" uid="uid://cdbuigtjve58y" path="res://assets/School/Classroom/GLTF/radio.glb" id="11_o6bkm"]
 [ext_resource type="PackedScene" uid="uid://b8laoo7bg22ad" path="res://assets/School/Classroom/GLTF/shelfwithwheels.glb" id="12_emah5"]
+[ext_resource type="PackedScene" uid="uid://diyr4a8gaboug" path="res://assets/School/Extra/paging_speaker.glb" id="12_t2jew"]
 [ext_resource type="PackedScene" uid="uid://dlc0nnak1g0s1" path="res://assets/School/Classroom/GLTF/book.glb" id="13_522js"]
 [ext_resource type="PackedScene" uid="uid://b7u27osxt7pre" path="res://assets/School/Classroom/GLTF/TV.glb" id="13_ybo74"]
 
@@ -51,6 +52,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.1533
 
 [node name="radio2" parent="." instance=ExtResource("11_o6bkm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.78016, 2.85839, 4.53027)
+
+[node name="Speaker" parent="." instance=ExtResource("12_t2jew")]
+transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.01, -4.78264, 2.75535, -2.03644)
 
 [node name="shelfwithwheels2" parent="." instance=ExtResource("12_emah5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27643, 0.287618, -2.08376)

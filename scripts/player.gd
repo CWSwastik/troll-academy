@@ -59,22 +59,34 @@ func _physics_process(delta):
 			inventory_update.emit(inventory)
 			
 		elif inventory[0].is_usable:
-			prompt.text = "Tip: The item can be used by pressing [Q]"
-		
-			if Input.is_action_just_pressed("use"):
-				var item = inventory.pop_front()
-				inventory_update.emit(inventory)
+			if inventory[0].item_name == "Water Bottle":
+				prompt.text = "Tip: The item can be used by pressing [Q]"
+			elif inventory[0].item_name == "Laxatives" and $CameraMount/InteractRay.is_colliding():
+				if $CameraMount/InteractRay.get_collider() is Cookie:
+					prompt.text = "Press [Q] to use Laxatives on this cookie"
 				
-				if item.item_name == "Water Bottle":
-					item.queue_free()
-					
-					var scene = preload("res://scenes/items/water_puddle.tscn")
-					var instance = scene.instantiate()
-					$"../Items".add_child(instance)
-					var forward = - camera_mount.global_transform.basis.z.normalized()
-					instance.global_position = $Visuals.global_position + forward * 2 + Vector3(0, 0.95, 0)
-					
-	else:
+			if Input.is_action_pressed("use"):
+				match inventory[0].item_name:
+					"Water Bottle":
+						var item = inventory.pop_front()
+						inventory_update.emit(inventory)
+						item.queue_free()
+						
+						var scene = preload("res://scenes/items/water_puddle.tscn")
+						var instance = scene.instantiate()
+						$"../Items".add_child(instance)
+						var forward = - camera_mount.global_transform.basis.z.normalized()
+						instance.global_position = $Visuals.global_position + forward * 2 + Vector3(0, 0.95, 0)
+					"Laxatives":
+						if not $CameraMount/InteractRay.is_colliding():
+							prompt.text = "Please find an eatable item first!"
+						else:
+							var obj = $CameraMount/InteractRay.get_collider()
+							if not obj is Cookie:
+								prompt.text = "This isn't an eatable item!"
+							else:
+								obj.add_laxatives()
+	else:					
 		prompt.visible = false
 
 	if not is_on_floor():
@@ -109,7 +121,9 @@ func _physics_process(delta):
 			if animation_player.current_animation != "Walking0":
 				animation_player.play("Walking0")	
 	else:
-		if animation_player.current_animation != "Idle0":
+		if Input.is_action_just_pressed("punch"):
+			animation_player.play("PunchCombo0")
+		elif animation_player.current_animation != "Idle0" and animation_player.current_animation != "PunchCombo0":
 			animation_player.play("Idle0")	
 	move_and_slide()
 

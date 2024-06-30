@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf5ka4pjsgi2t"]
+
+[ext_resource type="Script" path="res://scripts/water_puddle.gd" id="1_dyfb7"]
+[ext_resource type="PackedScene" uid="uid://du7f4mbkr2geu" path="res://assets/Items/water_puddle/water_puddle_plane_low_poly.glb" id="2_s0s3f"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m2yj5"]
+height = 0.103711
+radius = 1.10144
+
+[node name="WaterPuddle" type="Node3D"]
+script = ExtResource("1_dyfb7")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_s0s3f")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012281, 0)
+shape = SubResource("CylinderShape3D_m2yj5")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

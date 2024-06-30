@@ -92,8 +92,7 @@ func _physics_process(delta):
 				
 	nav.target_position = dest
 	var res = (nav.get_next_path_position() - global_position).normalized() * speed
-	velocity.x = res.x
-	velocity.z = res.z 
+	nav.set_velocity(res)
 
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -106,3 +105,8 @@ func _physics_process(delta):
 func _on_player_inventory_update(inventory):
 	if player_in_los:
 		$Panel/ProgressBar.value += 99
+
+
+func _on_navigation_agent_3d_velocity_computed(safe_velocity):
+	velocity.x = safe_velocity.x
+	velocity.z = safe_velocity.z 

@@ -9,15 +9,21 @@ func _on_player_inventory_update(inventory):
 
 var prev_completed_quest = null
 
+
+func update_current_quest_hud():
+	$QuestBox/QuestTitle.text = Global.current_quest["name"]
+	$QuestBox/QuestDesc.text = Global.current_quest["desc"]
+	$QuestBox/Item/TextureRect.texture = load(Global.current_quest["logo"])
+		
+func _ready():
+	update_current_quest_hud()
+
 func _process(delta):
 	if len(Global.completed_quests) < 1:
 		return
 		
 	if Global.completed_quests[-1] != prev_completed_quest:
-		$QuestBox/QuestTitle.text = Global.current_quest["name"]
-		$QuestBox/QuestDesc.text = Global.current_quest["desc"]
-		$QuestBox/Item/TextureRect.texture = load(Global.current_quest["logo"])
-		
+		update_current_quest_hud()
 		# Old quest got completed
 		$Notification/QuestTitle.text = Global.quests[Global.completed_quests[-1]]["name"]
 		$Notification.visible = true

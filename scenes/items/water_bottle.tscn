@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cowlc4lq8f0wy"]
 
-[ext_resource type="Script" path="res://scenes/items/water_bottle.gd" id="1_vtnxm"]
+[ext_resource type="Script" path="res://scripts/water_bottle.gd" id="1_vtnxm"]
 [ext_resource type="PackedScene" uid="uid://doaevm35tfkcu" path="res://assets/Items/water_bottle/water_bottleflask.glb" id="2_vg8r6"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4twjk"]

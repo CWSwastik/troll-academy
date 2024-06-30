@@ -9,9 +9,14 @@ func _ready():
 func _physics_process(delta):
 	if is_colliding():
 		var detected = get_collider()
-		
+		#  print(detected)
 		if detected is Interactable and detected.visible:
 			prompt.text = "Press [E] to pick up " + detected.item_name
 			prompt.visible = true
 			if Input.is_action_pressed("interact"):
 				item_pick.emit(detected)
+		elif detected.name == "PAMic":
+			prompt.text = "Press [E] to hack the PA system"
+			prompt.visible = true
+			if Input.is_action_pressed("interact"):
+				detected.hack()
