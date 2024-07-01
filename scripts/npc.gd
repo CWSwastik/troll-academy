@@ -4,6 +4,7 @@ extends CharacterBody3D
 const SPEED = 2.5
 
 var chasing = false
+var stumbling = false
 var cur_visit_dest := randi_range(0, len(visit_locations) - 1)
 
 @export var location_markets: Node3D

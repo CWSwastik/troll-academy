@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://qq1txhbmqcos"]
+[gd_scene load_steps=21 format=3 uid="uid://qq1txhbmqcos"]
 
 [ext_resource type="PackedScene" uid="uid://dnu8wdsfpm2ea" path="res://assets/School/Classroom/GLTF/blackboardbig.glb" id="1_83tq4"]
 [ext_resource type="PackedScene" uid="uid://bne3yq7fa5lr5" path="res://assets/School/Classroom/GLTF/blackboardlittle.glb" id="2_sysqn"]
@@ -13,9 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://qtxfhjeocw3d" path="res://scenes/wall.tscn" id="8_l782g"]
 [ext_resource type="PackedScene" uid="uid://dxmchgx1bes55" path="res://assets/School/Classroom/GLTF/shelf_001.glb" id="9_0s6of"]
 [ext_resource type="PackedScene" uid="uid://cdbuigtjve58y" path="res://assets/School/Classroom/GLTF/radio.glb" id="11_o6bkm"]
+[ext_resource type="PackedScene" uid="uid://muk6lnk7nu3k" path="res://assets/School/Classroom/GLTF/book__004.glb" id="12_e3m6u"]
 [ext_resource type="PackedScene" uid="uid://b8laoo7bg22ad" path="res://assets/School/Classroom/GLTF/shelfwithwheels.glb" id="12_emah5"]
 [ext_resource type="PackedScene" uid="uid://diyr4a8gaboug" path="res://assets/School/Extra/paging_speaker.glb" id="12_t2jew"]
 [ext_resource type="PackedScene" uid="uid://dlc0nnak1g0s1" path="res://assets/School/Classroom/GLTF/book.glb" id="13_522js"]
+[ext_resource type="PackedScene" uid="uid://wn6xc4757del" path="res://assets/School/Classroom/GLTF/postit_001.glb" id="13_pqsrf"]
+[ext_resource type="PackedScene" uid="uid://b4x8o1v02x2s2" path="res://assets/School/Classroom/GLTF/postit.glb" id="13_x4t5w"]
 [ext_resource type="PackedScene" uid="uid://b7u27osxt7pre" path="res://assets/School/Classroom/GLTF/TV.glb" id="13_ybo74"]
 
 [node name="Classroom" type="Node3D"]
@@ -53,8 +56,17 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.1533
 [node name="radio2" parent="." instance=ExtResource("11_o6bkm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.78016, 2.85839, 4.53027)
 
+[node name="book__004" parent="." instance=ExtResource("12_e3m6u")]
+transform = Transform3D(1.36303, 1.46349, -0.0189537, 0, -0.0259, -1.99983, -1.46361, 1.36291, -0.0176512, -4.07902, 1.07057, -2.01658)
+
 [node name="Speaker" parent="." instance=ExtResource("12_t2jew")]
 transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.01, -4.78264, 2.75535, -2.03644)
+
+[node name="postit_0012" parent="." instance=ExtResource("13_pqsrf")]
+transform = Transform3D(0.00394094, -0.499278, -0.0265667, -0.0639832, 0.0258455, -0.495215, 0.495874, 0.00730289, -0.0636871, -4.81338, 1.63827, -1.09251)
+
+[node name="postit2" parent="." instance=ExtResource("13_x4t5w")]
+transform = Transform3D(0.0748683, -0.99713, 0.0112703, 0.314822, 0.012911, -0.949063, 0.946194, 0.0746029, 0.314885, -4.80485, 1.63828, -0.776405)
 
 [node name="shelfwithwheels2" parent="." instance=ExtResource("12_emah5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27643, 0.287618, -2.08376)

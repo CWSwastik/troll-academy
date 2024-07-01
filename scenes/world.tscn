@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bmsrqlgr7euy"]
+[gd_scene load_steps=35 format=3 uid="uid://bmsrqlgr7euy"]
 
 [ext_resource type="PackedScene" uid="uid://bgkii7b7me1qu" path="res://scenes/cafeteria.tscn" id="1_hkqkn"]
 [ext_resource type="Texture2D" uid="uid://dkj5mr4k7t13o" path="res://assets/Textures/wood/oak_veneer_01_diff_2k.jpg" id="1_xiq0e"]
@@ -19,8 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://byrqqa8l1p061" path="res://assets/School/Classroom/GLTF/locker.glb" id="17_wiqwj"]
 [ext_resource type="PackedScene" uid="uid://cowlc4lq8f0wy" path="res://scenes/items/water_bottle.tscn" id="18_can55"]
 [ext_resource type="PackedScene" uid="uid://qtx1fyvrefck" path="res://scenes/computer_lab.tscn" id="20_7m716"]
+[ext_resource type="AudioStream" uid="uid://chi7n8ypwntr3" path="res://assets/SFX/quest_complete.mp3" id="20_shwhr"]
 [ext_resource type="PackedScene" uid="uid://bc1pt6x62hj0l" path="res://scenes/items/laxatives.tscn" id="21_8l0fw"]
+[ext_resource type="AudioStream" uid="uid://ci2qklu0i6xgk" path="res://assets/SFX/body_drop.mp3" id="21_xse72"]
 [ext_resource type="PackedScene" uid="uid://de0atyvhcwx54" path="res://scenes/items/cookie.tscn" id="22_otqnq"]
+[ext_resource type="PackedScene" uid="uid://cyl2nhqm0xxwh" path="res://scenes/gran_teacher.tscn" id="23_ixjdf"]
 [ext_resource type="PackedScene" uid="uid://uemgl5jswnj8" path="res://scenes/settings_page.tscn" id="27_m44su"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a4u6u"]
@@ -216,10 +219,14 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.6872
 
 [node name="Teacher" parent="." node_paths=PackedStringArray("patrol_locations") instance=ExtResource("6_06odu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9295, 0.781397, -52.9267)
-patrol_locations = [NodePath("../LocationMarkers/ComputerLab"), NodePath("../LocationMarkers/Classroom"), NodePath("../LocationMarkers/Cafeteria"), NodePath("../LocationMarkers/Toilet"), NodePath("../LocationMarkers/ArtRoom")]
+patrol_locations = [NodePath("../LocationMarkers/ComputerLab"), NodePath("../LocationMarkers/Toilet"), NodePath("../LocationMarkers/ArtRoom"), NodePath("../LocationMarkers/ChemistryLab"), NodePath("../LocationMarkers/Lockers")]
+
+[node name="GranTeacher" parent="." node_paths=PackedStringArray("patrol_locations") instance=ExtResource("23_ixjdf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.586, 0.05264, -79.033)
+patrol_locations = [NodePath("../LocationMarkers/Classroom"), NodePath("../LocationMarkers/Cafeteria"), NodePath("../LocationMarkers/ComputerLab"), NodePath("../LocationMarkers/Lockers"), NodePath("../LocationMarkers/Toilet")]
 
 [node name="Player" parent="." instance=ExtResource("2_u5pms")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6607, 0.0526419, -64.54)
+transform = Transform3D(0.818059, 0, 0.575134, 0, 1, 0, -0.575134, 0, 0.818059, -60.973, 0.0526419, -62.4633)
 
 [node name="LocationMarkers" type="Node3D" parent="."]
 
@@ -267,7 +274,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.8544, 0.915886, -53.5581)
 location_markets = NodePath("../../LocationMarkers")
 
 [node name="NPC6" parent="NPCs" node_paths=PackedStringArray("location_markets") instance=ExtResource("14_x2tcg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5981, 0.915886, -53.5581)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9947, 0.915886, -53.5581)
 location_markets = NodePath("../../LocationMarkers")
 
 [node name="Items" type="Node3D" parent="."]
@@ -276,7 +283,7 @@ location_markets = NodePath("../../LocationMarkers")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.6119, 8.3867, -65.3614)
 
 [node name="WaterBottle" parent="Items" instance=ExtResource("18_can55")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8447, 3.48019, -47.1745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6037, 4.47906, -35.1835)
 
 [node name="Laxatives" parent="Items" instance=ExtResource("21_8l0fw")]
 transform = Transform3D(0.345265, 0, 0.938505, 0, 1, 0, -0.938505, 0, 0.345265, 60.7807, 3.43515, -86.7698)
@@ -288,6 +295,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2429, 4.46429, -38.3002)
 stream = ExtResource("16_4hww5")
 volume_db = -14.81
 autoplay = true
+
+[node name="QuestComplete" type="AudioStreamPlayer" parent="." groups=["sfx"]]
+stream = ExtResource("20_shwhr")
+volume_db = -1.742
+
+[node name="FallDown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_xse72")
+volume_db = -1.742
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3

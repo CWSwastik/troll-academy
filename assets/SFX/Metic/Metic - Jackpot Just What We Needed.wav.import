@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8dugp80ds748"
+path="res://.godot/imported/Metic - Jackpot Just What We Needed.wav-19fc7ee8bbb5ee04d42d856ea451bbed.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Metic/Metic - Jackpot Just What We Needed.wav"
+dest_files=["res://.godot/imported/Metic - Jackpot Just What We Needed.wav-19fc7ee8bbb5ee04d42d856ea451bbed.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

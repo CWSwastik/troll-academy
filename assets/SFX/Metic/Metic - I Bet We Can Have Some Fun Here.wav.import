@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://x1ekmi3eyp1u"
+path="res://.godot/imported/Metic - I Bet We Can Have Some Fun Here.wav-8c329dd7b44f17557dc38e1d7272ff02.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Metic/Metic - I Bet We Can Have Some Fun Here.wav"
+dest_files=["res://.godot/imported/Metic - I Bet We Can Have Some Fun Here.wav-8c329dd7b44f17557dc38e1d7272ff02.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

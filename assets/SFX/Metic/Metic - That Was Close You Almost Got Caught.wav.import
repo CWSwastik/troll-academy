@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csx0mjwqk7txy"
+path="res://.godot/imported/Metic - That Was Close You Almost Got Caught.wav-5c225671a5af8846dd6aa4b59e8ea3fc.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Metic/Metic - That Was Close You Almost Got Caught.wav"
+dest_files=["res://.godot/imported/Metic - That Was Close You Almost Got Caught.wav-5c225671a5af8846dd6aa4b59e8ea3fc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

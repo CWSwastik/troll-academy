@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b42idcgm2iuob"
+path="res://.godot/imported/Metic - Ready to Cause Some Chaos.wav-aba34c93981937c6f27b9b2bd348de08.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Metic/Metic - Ready to Cause Some Chaos.wav"
+dest_files=["res://.godot/imported/Metic - Ready to Cause Some Chaos.wav-aba34c93981937c6f27b9b2bd348de08.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

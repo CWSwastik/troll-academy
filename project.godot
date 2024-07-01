@@ -22,11 +22,8 @@ Global="*res://scripts/Global.gd"
 
 [display]
 
-window/size/resizable=false
-
-[filesystem]
-
-import/fbx/enabled=false
+window/size/viewport_width=1400
+window/size/viewport_height=771
 
 [input]
 

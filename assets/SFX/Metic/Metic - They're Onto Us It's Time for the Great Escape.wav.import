@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cv1tcg4cwgaaw"
+path="res://.godot/imported/Metic - They're Onto Us It's Time for the Great Escape.wav-e116402497ba9db319ff81f879388cfb.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Metic/Metic - They're Onto Us It's Time for the Great Escape.wav"
+dest_files=["res://.godot/imported/Metic - They're Onto Us It's Time for the Great Escape.wav-e116402497ba9db319ff81f879388cfb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

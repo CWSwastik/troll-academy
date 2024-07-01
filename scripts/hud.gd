@@ -27,7 +27,7 @@ func _process(delta):
 		# Old quest got completed
 		$Notification/QuestTitle.text = Global.quests[Global.completed_quests[-1]]["name"]
 		$Notification.visible = true
-		await get_tree().create_timer(5.0).timeout
+		await get_tree().create_timer(10.0).timeout
 		$Notification.visible = false
 			
 

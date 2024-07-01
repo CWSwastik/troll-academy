@@ -5,6 +5,9 @@ const SPEED = 3
 
 var chasing := false
 var player_in_los := true
+
+var stumbling = false
+var getting_up = false
 var cur_patrol_dest := 0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -18,9 +21,11 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _physics_process(delta):
 	
-	if (patrol_locations[cur_patrol_dest].global_position - global_position).length() < 2:
-		cur_patrol_dest = (cur_patrol_dest + 1) % len(patrol_locations)
-	
+	var dist_to_dest = (patrol_locations[cur_patrol_dest].global_position - global_position).length()
+	if dist_to_dest < 2:
+		if randi_range(0, 1000) == 5:
+			cur_patrol_dest = (cur_patrol_dest + 1) % len(patrol_locations)
+		
 	#if Time.get_time_dict_from_system()["second"] % 12 == 0:
 		#dest = player.global_position + Vector3(rwandi_range(-50, 50), 0, randi_range(-50, 50))
 	dest = patrol_locations[cur_patrol_dest].global_position
@@ -82,14 +87,45 @@ func _physics_process(delta):
 		#chasing = not chasing	
 	
 	var speed = SPEED
-	if chasing:
+	
+	if getting_up:
+		$Visuals/Node.position.z = 0
+		
+		if animation_player.current_animation != "GettingUp":
+			animation_player.play("GettingUp")	
+	elif stumbling:
+
+		$Visuals/Node.position.z = lerp($Visuals/Node.position.z, 160.0, 0.075)
+		
+		if animation_player.current_animation != "Stumble":
+			$Visuals/Node.position.y += 12
+			animation_player.play("Stumble")
+			await get_tree().create_timer(1.2).timeout
+			
+			$"../FallDown".play()
+			await get_tree().create_timer(1).timeout
+			$WaterAudio.play()
+	elif not is_on_floor():
+		if animation_player.current_animation != "Falling":
+			animation_player.play("Falling")
+	elif chasing:
 		speed *= 2.5
-		if animation_player.current_animation != "Running":
-			animation_player.play("Running")	
-	else:
+		if animation_player.current_animation != "Run":
+			animation_player.play("Run")	
+	elif dist_to_dest > 2:
 		if animation_player.current_animation != "Walk":
 			animation_player.play("Walk")
-				
+	else:
+		if animation_player.current_animation != "Idle":
+			animation_player.play("Idle")
+			
+		return
+			
+	if stumbling or getting_up:
+		return 		
+		
+	
+		
 	nav.target_position = dest
 	var res = (nav.get_next_path_position() - global_position).normalized() * speed
 	nav.set_velocity(res)
@@ -110,3 +146,14 @@ func _on_player_inventory_update(inventory):
 func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 	velocity.x = safe_velocity.x
 	velocity.z = safe_velocity.z 
+
+
+
+func _on_animation_player_animation_finished(anim_name):
+
+	if anim_name == "Stumble":
+		stumbling = false
+		getting_up = true
+	if anim_name == "GettingUp":
+		getting_up = false
+		$Visuals/Node.position.y -= 12

@@ -8,7 +8,7 @@ var quests = {
 	},
 	2: {
 		"name": "Wet and Wild",
-		"desc": "Spill water and make someone fall down",
+		"desc": "Spill water and make a teacher fall down",
 		"logo": "res://assets/ItemLogos/water_bottle.png"
 	},
 	3: {
@@ -37,6 +37,8 @@ var quests = {
 var completed_quests: Array[int] = []
 var active_quest_id = randi_range(1, 4)
 
+var intro_played = false
+
 var current_quest:
 	get:
 		return quests[active_quest_id]
@@ -44,6 +46,8 @@ var current_quest:
 func quest_complete(id: int):
 	if id in completed_quests:
 		return
+		
+	get_tree().get_first_node_in_group("sfx").play()
 	completed_quests.append(id)
 	for i in len(quests):
 		if i+1 not in completed_quests:

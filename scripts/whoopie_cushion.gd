@@ -15,12 +15,12 @@ func _on_area_3d_body_entered(body):
 		$AudioStreamPlayer3D.play()
 		deflated = true
 		var tween = create_tween()
-		tween.tween_property(self, "scale", Vector3(scale.x, 0.1, scale.z), 0.5)
+		tween.tween_property(self, "scale", Vector3(scale.x, 0.1, scale.z), 0.3)
 		tween.tween_property(self, "scale", scale, 1)
 		tween.tween_callback(inflate)
 		
-		body.velocity.y += 15
-		if body.name == "Teacher" or body.name.begins_with("NPC"):
+		body.velocity.y += 12
+		if body is Teacher or body is NPC:
 			print(body.name)
 			Global.quest_complete(1)
 

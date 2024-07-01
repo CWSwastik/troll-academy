@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b1qt81t2nywb5"
+path="res://.godot/imported/Metic - You Know, Trolling is an Art.wav-47de7cf173deaea20c75035ffd9e4afd.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Metic/Metic - You Know, Trolling is an Art.wav"
+dest_files=["res://.godot/imported/Metic - You Know, Trolling is an Art.wav-47de7cf173deaea20c75035ffd9e4afd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

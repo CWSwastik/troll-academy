@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0vd18l4j012d"
+path="res://.godot/imported/Metic - Boom Another One Bites the Dust.wav-950176fc7a71d5aaf4d1062d205fcb48.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Metic/Metic - Boom Another One Bites the Dust.wav"
+dest_files=["res://.godot/imported/Metic - Boom Another One Bites the Dust.wav-950176fc7a71d5aaf4d1062d205fcb48.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
