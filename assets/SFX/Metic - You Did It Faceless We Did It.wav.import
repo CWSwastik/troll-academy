@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://j22jyulbcsnq"
+path="res://.godot/imported/Metic - You Did It Faceless We Did It.wav-d7f67e44404f6c42dddb1b8514ca4770.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Metic - You Did It Faceless We Did It.wav"
+dest_files=["res://.godot/imported/Metic - You Did It Faceless We Did It.wav-d7f67e44404f6c42dddb1b8514ca4770.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

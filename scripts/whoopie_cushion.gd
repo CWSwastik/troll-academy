@@ -3,6 +3,7 @@ extends Interactable
 const item_name = "Whoopie Cushion"
 const icon_path = "res://assets/ItemLogos/whoopee_cushion.png"
 const is_usable = false
+const suspicious = true
 
 var deflated = false
 
@@ -19,7 +20,7 @@ func _on_area_3d_body_entered(body):
 		tween.tween_property(self, "scale", scale, 1)
 		tween.tween_callback(inflate)
 		
-		body.velocity.y += 12
+		body.velocity.y += 5
 		if body is Teacher or body is NPC:
 			print(body.name)
 			Global.quest_complete(1)

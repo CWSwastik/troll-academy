@@ -14,8 +14,9 @@ const JUMP_VELOCITY = 6
 
 signal inventory_update(inventory)
 
-var inventory: Array = []
+var inventory: Array[RigidBody3D] = []
 
+var bottle_use_count = 5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -53,7 +54,9 @@ func _physics_process(delta):
 			var forward = - camera_mount.global_transform.basis.z.normalized()
 			
 			# Set the item's position in front of the player
-			item.global_position = $Visuals.global_position + forward * 2 + Vector3(0, 2, 0)
+			item.global_position = $Visuals.global_position + forward * 2.2 + Vector3(0, 2, 0)
+			item.linear_velocity = Vector3(0,0,0)
+			item.rotation = Vector3(0,0,0)
 			item.enable()
 			print("Placed " + item.item_name)
 			inventory_update.emit(inventory)
@@ -70,8 +73,14 @@ func _physics_process(delta):
 					"Water Bottle":
 						var item = inventory.pop_front()
 						inventory_update.emit(inventory)
-						item.queue_free()
 						
+						if bottle_use_count < 1:
+							item.queue_free()
+						else:
+							inventory.append(item)
+							bottle_use_count -= 1
+						inventory_update.emit(inventory)
+							
 						var scene = preload("res://scenes/items/water_puddle.tscn")
 						var instance = scene.instantiate()
 						$"../Items".add_child(instance)
@@ -125,6 +134,14 @@ func _physics_process(delta):
 			animation_player.play("PunchCombo0")
 		elif animation_player.current_animation != "Idle0" and animation_player.current_animation != "PunchCombo0":
 			animation_player.play("Idle0")	
+	
+	# SFX
+	if is_on_floor() and Input.is_action_pressed("sprint"):
+		if not $RunningSFX.playing:
+			$RunningSFX.play()
+	else:
+		$RunningSFX.stop()
+	
 	move_and_slide()
 
 

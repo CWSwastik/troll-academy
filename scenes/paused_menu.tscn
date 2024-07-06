@@ -4,7 +4,6 @@
 
 [node name="PausedMenu" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,22 +38,31 @@ theme_override_constants/v_separation = 8
 
 [node name="Label" type="Label" parent="GridContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 72
 text = "Paused"
 
 [node name="ResumeButton" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Resume"
 
 [node name="SettingsButton" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Settings"
+
+[node name="QuestsButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Troll Quests"
 
 [node name="QuitButton" type="Button" parent="GridContainer"]
 layout_mode = 2
-text = "Quit
+theme_override_font_sizes/font_size = 32
+text = "Main Menu
 "
 
 [connection signal="pressed" from="GridContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="GridContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="GridContainer/QuestsButton" to="." method="_on_quests_button_pressed"]
 [connection signal="pressed" from="GridContainer/QuitButton" to="." method="_on_quit_button_pressed"]

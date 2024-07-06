@@ -5,7 +5,7 @@ const SPEED = 3
 
 var chasing := false
 var player_in_los := true
-
+var narrow_escape := false
 var stumbling = false
 var getting_up = false
 var cur_patrol_dest := 0
@@ -23,7 +23,7 @@ func _physics_process(delta):
 	
 	var dist_to_dest = (patrol_locations[cur_patrol_dest].global_position - global_position).length()
 	if dist_to_dest < 2:
-		if randi_range(0, 1000) == 5:
+		if randi_range(0, 500) == 5:
 			cur_patrol_dest = (cur_patrol_dest + 1) % len(patrol_locations)
 		
 	#if Time.get_time_dict_from_system()["second"] % 12 == 0:
@@ -52,7 +52,7 @@ func _physics_process(delta):
 		
 	if player_in_los:
 		var player_standing_high = player.global_position.y > 2 and player.velocity.y == 0
-		var player_has_suspicious_item = len(player.inventory) > 0
+		var player_has_suspicious_item = len(player.inventory) > 0 and player.inventory[0].suspicious
 		if not chasing:
 			if player_standing_high and not $GetDownAudio.playing:
 				$GetDownAudio.play()
@@ -64,12 +64,15 @@ func _physics_process(delta):
 		
 		if player_standing_high:
 			$Panel/ProgressBar.value += 0.75
+			Global.game_over_reason = "You were detained for suspicious activities"
 		elif player_has_suspicious_item:
 			print("Sus", $Panel/ProgressBar.value)
-			
+			Global.game_over_reason = "You were detained for having a suspicious item"
 			$Panel/ProgressBar.value += (100-$Panel/ProgressBar.value)/1000
 		elif chasing:
 			chasing = not chasing
+			if narrow_escape:
+				AudioPlayer.narrow_escape()
 	else:
 		$Panel/ProgressBar.value -= 0.05
 		$Panel/ProgressBar.value = clamp($Panel/ProgressBar.value, 0, 100)
@@ -77,6 +80,11 @@ func _physics_process(delta):
 	if $Panel/ProgressBar.value > 99:
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 		return 
+	
+	if $Panel/ProgressBar.value > 70:
+		narrow_escape = true
+	elif $Panel/ProgressBar.value < 5 and narrow_escape:
+		narrow_escape = false
 		
 	if chasing and (player.global_position - global_position).length() < 4:
 		if player.inventory:
@@ -141,7 +149,7 @@ func _physics_process(delta):
 func _on_player_inventory_update(inventory):
 	if player_in_los:
 		$Panel/ProgressBar.value += 99
-
+		Global.game_over_reason = "You were detained for having a suspicious item"
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 	velocity.x = safe_velocity.x

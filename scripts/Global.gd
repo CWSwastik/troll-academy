@@ -23,13 +23,13 @@ var quests = {
 	},
 	5: {
 		"name": "Sticky Situation",
-		"desc": "Glue items to desks in the classroom",
+		"desc": "Glue notebooks to desks in the classroom",
 		"logo": "res://assets/ItemLogos/glue.png"
 	},
 	6: {
-		"name": "Mouse Mayhem",
-		"desc": "Tape over the bottom of all the computer mice",
-		"logo": "res://assets/ItemLogos/mouse.png"
+		"name": "Bubbles of Boom",
+		"desc": "Create an explosion in the chemistry lab",
+		"logo": "res://assets/ItemLogos/explosion.png"
 	},
 
 }
@@ -38,6 +38,7 @@ var completed_quests: Array[int] = []
 var active_quest_id = randi_range(1, 4)
 
 var intro_played = false
+var game_over_reason = ""
 
 var current_quest:
 	get:
@@ -49,10 +50,18 @@ func quest_complete(id: int):
 		
 	get_tree().get_first_node_in_group("sfx").play()
 	completed_quests.append(id)
+	var new = false
 	for i in len(quests):
 		if i+1 not in completed_quests:
 			active_quest_id = i+1
+			new = true
 			break
-
-	print(completed_quests, active_quest_id)
-	
+			
+	await get_tree().create_timer(1.0).timeout
+	if not new:
+		# Game Won
+		get_tree().change_scene_to_file("res://scenes/game_won.tscn")
+	else:
+		print(completed_quests, active_quest_id)
+		
+		AudioPlayer.nice_job()

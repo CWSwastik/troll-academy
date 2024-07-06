@@ -19,16 +19,32 @@ func set_paused(value: bool) -> void:
 	
 	
 func _on_resume_button_pressed():
+	AudioPlayer.button_click()
 	_is_paused = false
 
 
 func _on_settings_button_pressed():
+	AudioPlayer.button_click()
 	$SettingsPage.visible = true
 
 
 func _on_quit_button_pressed():
-	get_tree().quit()
+	AudioPlayer.button_click()
+	_is_paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func _on_settings_page_back_button_pressed():
+	AudioPlayer.button_click()
 	$SettingsPage.visible = false
+
+
+func _on_quests_button_pressed():
+	AudioPlayer.button_click()
+	$QuestsMenu.visible = true
+
+
+func _on_quests_menu_back_button_pressed():
+	AudioPlayer.button_click()
+	$QuestsMenu.visible = false

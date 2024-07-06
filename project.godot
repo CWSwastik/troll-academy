@@ -13,17 +13,22 @@ config_version=5
 config/name="TrollAcademy"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-boot_splash/image="res://assets/UI/Title.png"
+boot_splash/bg_color=Color(0.247059, 0.333333, 0.25098, 1)
+boot_splash/image="res://assets/UI/splash.png"
+boot_splash/fullsize=false
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://scripts/Global.gd"
+AudioPlayer="*res://scenes/audio_player.tscn"
 
 [display]
 
 window/size/viewport_width=1400
 window/size/viewport_height=771
+window/size/mode=3
+window/size/resizable=false
 
 [input]
 

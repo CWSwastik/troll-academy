@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://botx8b7q4m50t" path="res://assets/Fonts/Handlee-Regular.ttf" id="2_167da"]
 
 [node name="MainMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,60 +26,31 @@ expand_mode = 2
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 2
-anchor_left = 0.125
-anchor_top = 0.61
-anchor_right = 0.317
-anchor_bottom = 0.727
-offset_top = -0.279999
-offset_right = -0.18399
-offset_bottom = -0.0960388
+anchor_left = 0.551
+anchor_top = 0.588
+anchor_right = 0.814
+anchor_bottom = 0.725
+offset_left = -121.4
+offset_top = -2.34799
+offset_right = -135.6
+offset_bottom = -1.97504
 theme_override_fonts/font = ExtResource("2_167da")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 64
 text = "Start"
-
-[node name="OptionsButton" type="Button" parent="."]
-layout_mode = 2
-anchor_left = 0.124
-anchor_top = 0.75
-anchor_right = 0.352
-anchor_bottom = 0.867
-offset_left = 0.151993
-offset_top = -3.05176e-05
-offset_right = 0.495972
-offset_bottom = 0.18396
-theme_override_fonts/font = ExtResource("2_167da")
-theme_override_font_sizes/font_size = 50
-text = "Options"
-
-[node name="CreditsButton" type="Button" parent="."]
-layout_mode = 2
-anchor_left = 0.331
-anchor_top = 0.611
-anchor_right = 0.533
-anchor_bottom = 0.728
-offset_left = -0.312042
-offset_top = 0.071991
-offset_right = -0.0160522
-offset_bottom = 0.255981
-theme_override_fonts/font = ExtResource("2_167da")
-theme_override_font_sizes/font_size = 50
-text = "Credits"
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 2
-anchor_left = 0.365
-anchor_top = 0.75
-anchor_right = 0.568
-anchor_bottom = 0.867
-offset_left = 0.519989
-offset_top = -3.05176e-05
-offset_right = -0.335999
-offset_bottom = 0.18396
+anchor_left = 0.707
+anchor_top = 0.764
+anchor_right = 0.936
+anchor_bottom = 0.881
+offset_left = -42.8
+offset_top = -6.04407
+offset_right = -6.40002
+offset_bottom = 10.749
 theme_override_fonts/font = ExtResource("2_167da")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 64
 text = "Quit"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

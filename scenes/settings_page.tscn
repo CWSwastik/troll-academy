@@ -46,16 +46,19 @@ theme_override_constants/separation = 5
 
 [node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 72
 text = "Settings"
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Volume"
 
 [node name="Volume" type="HSlider" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-max_value = 10.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="Mute" type="CheckBox" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2

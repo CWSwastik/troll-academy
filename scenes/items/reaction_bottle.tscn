@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://beaem8myosi57"]
+
+[ext_resource type="PackedScene" uid="uid://bc7mjikvqpebj" path="res://assets/School/ChemistryLab/GLTF/CHEMISTRYvial_004.glb" id="1_7xiiv"]
+[ext_resource type="Script" path="res://scripts/reaction_bottle.gd" id="1_adc27"]
+[ext_resource type="PackedScene" uid="uid://bkog8vdrxl7ml" path="res://assets/Items/tin_foil/tin_foil_hat.glb" id="2_whtxs"]
+[ext_resource type="AudioStream" uid="uid://dgqhnxeauhb4a" path="res://assets/SFX/gas-hiss.mp3" id="4_k1ypy"]
+[ext_resource type="AudioStream" uid="uid://6bnw0wswsl3b" path="res://assets/SFX/explosion.mp3" id="5_me3as"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ll74o"]
+height = 0.420919
+radius = 0.142458
+
+[node name="ReactionBottle" type="StaticBody3D"]
+script = ExtResource("1_adc27")
+
+[node name="CHEMISTRYvial_0042" parent="." instance=ExtResource("1_7xiiv")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.137624, 0)
+shape = SubResource("CylinderShape3D_ll74o")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_whtxs")]
+transform = Transform3D(0.36, 0, 0, 0, -0.253624, 0.25549, 0, -0.25549, -0.253624, -0.000614241, 0.0479467, 0.0185871)
+
+[node name="Hiss" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_k1ypy")
+volume_db = 0.029
+
+[node name="Explosion" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_me3as")

@@ -1,0 +1,638 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgwewmf71fimj"]
+
+[ext_resource type="Texture2D" uid="uid://b2dm5xjg06em3" path="res://assets/ItemLogos/whoopee_cushion.png" id="1_tioxn"]
+[ext_resource type="Script" path="res://scripts/quests_menu.gd" id="1_v6kww"]
+[ext_resource type="FontFile" uid="uid://botx8b7q4m50t" path="res://assets/Fonts/Handlee-Regular.ttf" id="2_i3146"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwokb"]
+bg_color = Color(0.870588, 0.639216, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d10y"]
+bg_color = Color(0.027451, 0.0588235, 0.439216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxvnp"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="QuestsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v6kww")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fwokb")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -221.0
+offset_top = 40.0
+offset_right = 225.0
+offset_bottom = 122.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_i3146")
+theme_override_font_sizes/font_size = 60
+text = "TROLL QUESTS"
+
+[node name="QuestBox1" type="Panel" parent="Panel/Label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -537.0
+offset_top = 110.0
+offset_right = -22.0
+offset_bottom = 246.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4d10y")
+
+[node name="Item" type="Panel" parent="Panel/Label/QuestBox1"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -51.5
+offset_right = 122.0
+offset_bottom = 49.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxvnp")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Label/QuestBox1/Item"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -46.5
+offset_right = 50.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tioxn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/Label/QuestBox1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -48.5
+offset_right = -166.0
+offset_bottom = -14.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.776471, 1)
+theme_override_font_sizes/font_size = 20
+text = "Troll Quest 1
+"
+
+[node name="QuestTitle" type="Label" parent="Panel/Label/QuestBox1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -18.5
+offset_right = -72.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 14
+theme_override_constants/shadow_offset_y = 13
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+text = "Whoopie Trouble
+"
+
+[node name="QuestDesc" type="Label" parent="Panel/Label/QuestBox1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = 18.5
+offset_right = -3.0
+offset_bottom = 67.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Troll someone with a Whoopie Cushion"
+
+[node name="QuestBox2" type="Panel" parent="Panel/Label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -539.5
+offset_top = 275.0
+offset_right = -24.5
+offset_bottom = 411.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4d10y")
+
+[node name="Item" type="Panel" parent="Panel/Label/QuestBox2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -51.5
+offset_right = 122.0
+offset_bottom = 49.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxvnp")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Label/QuestBox2/Item"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -46.5
+offset_right = 50.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tioxn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/Label/QuestBox2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -48.5
+offset_right = -166.0
+offset_bottom = -14.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.776471, 1)
+theme_override_font_sizes/font_size = 20
+text = "Troll Quest 2"
+
+[node name="QuestTitle" type="Label" parent="Panel/Label/QuestBox2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -18.5
+offset_right = -72.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 14
+theme_override_constants/shadow_offset_y = 13
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+text = "Whoopie Trouble
+"
+
+[node name="QuestDesc" type="Label" parent="Panel/Label/QuestBox2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = 18.5
+offset_right = -3.0
+offset_bottom = 67.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Troll someone with a Whoopie Cushion"
+
+[node name="QuestBox3" type="Panel" parent="Panel/Label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -537.5
+offset_top = 443.0
+offset_right = -22.5
+offset_bottom = 579.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4d10y")
+
+[node name="Item" type="Panel" parent="Panel/Label/QuestBox3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -51.5
+offset_right = 122.0
+offset_bottom = 49.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxvnp")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Label/QuestBox3/Item"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -46.5
+offset_right = 50.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tioxn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/Label/QuestBox3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -48.5
+offset_right = -166.0
+offset_bottom = -14.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.776471, 1)
+theme_override_font_sizes/font_size = 20
+text = "Troll Quest 3
+"
+
+[node name="QuestTitle" type="Label" parent="Panel/Label/QuestBox3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -18.5
+offset_right = -72.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 14
+theme_override_constants/shadow_offset_y = 13
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+text = "Whoopie Trouble
+"
+
+[node name="QuestDesc" type="Label" parent="Panel/Label/QuestBox3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = 18.5
+offset_right = -3.0
+offset_bottom = 67.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Troll someone with a Whoopie Cushion"
+
+[node name="QuestBox4" type="Panel" parent="Panel/Label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 26.5
+offset_top = 109.0
+offset_right = 541.5
+offset_bottom = 245.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4d10y")
+
+[node name="Item" type="Panel" parent="Panel/Label/QuestBox4"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -51.5
+offset_right = 122.0
+offset_bottom = 49.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxvnp")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Label/QuestBox4/Item"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -46.5
+offset_right = 50.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tioxn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/Label/QuestBox4"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -48.5
+offset_right = -166.0
+offset_bottom = -14.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.776471, 1)
+theme_override_font_sizes/font_size = 20
+text = "Troll Quest 4
+"
+
+[node name="QuestTitle" type="Label" parent="Panel/Label/QuestBox4"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -18.5
+offset_right = -72.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 14
+theme_override_constants/shadow_offset_y = 13
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+text = "Whoopie Trouble
+"
+
+[node name="QuestDesc" type="Label" parent="Panel/Label/QuestBox4"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = 18.5
+offset_right = -3.0
+offset_bottom = 67.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Troll someone with a Whoopie Cushion"
+
+[node name="QuestBox5" type="Panel" parent="Panel/Label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 23.5
+offset_top = 276.0
+offset_right = 538.5
+offset_bottom = 412.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4d10y")
+
+[node name="Item" type="Panel" parent="Panel/Label/QuestBox5"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -51.5
+offset_right = 122.0
+offset_bottom = 49.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxvnp")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Label/QuestBox5/Item"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -46.5
+offset_right = 50.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tioxn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/Label/QuestBox5"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -48.5
+offset_right = -166.0
+offset_bottom = -14.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.776471, 1)
+theme_override_font_sizes/font_size = 20
+text = "Troll Quest 5"
+
+[node name="QuestTitle" type="Label" parent="Panel/Label/QuestBox5"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -383.0
+offset_top = -18.5
+offset_right = -73.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 14
+theme_override_constants/shadow_offset_y = 13
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+text = "Whoopie Trouble
+"
+
+[node name="QuestDesc" type="Label" parent="Panel/Label/QuestBox5"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = 18.5
+offset_right = -3.0
+offset_bottom = 67.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Troll someone with a Whoopie Cushion"
+
+[node name="QuestBox6" type="Panel" parent="Panel/Label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 21.5
+offset_top = 442.0
+offset_right = 536.5
+offset_bottom = 578.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4d10y")
+
+[node name="Item" type="Panel" parent="Panel/Label/QuestBox6"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -51.5
+offset_right = 122.0
+offset_bottom = 49.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxvnp")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Label/QuestBox6/Item"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -46.5
+offset_right = 50.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tioxn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/Label/QuestBox6"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -48.5
+offset_right = -166.0
+offset_bottom = -14.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.776471, 1)
+theme_override_font_sizes/font_size = 20
+text = "Troll Quest 6
+"
+
+[node name="QuestTitle" type="Label" parent="Panel/Label/QuestBox6"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -18.5
+offset_right = -72.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 14
+theme_override_constants/shadow_offset_y = 13
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+text = "Whoopie Trouble
+"
+
+[node name="QuestDesc" type="Label" parent="Panel/Label/QuestBox6"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = 18.5
+offset_right = -3.0
+offset_bottom = 67.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Troll someone with a Whoopie Cushion"
+
+[node name="BackButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -106.0
+offset_right = 89.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 28
+text = "Go Back"
+
+[connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]

@@ -14,6 +14,7 @@ var cur_visit_dest := randi_range(0, len(visit_locations) - 1)
 @onready var dest = visit_locations[cur_visit_dest].global_position
 @onready var animation_player = $Visuals/AnimationPlayer
 @onready var nav = $NavigationAgent3D
+@onready var player = $"../../Player"
 
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -45,6 +46,9 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		
+	if (player.global_position - self.global_position).length() < 5 and not $GetAway.playing and randi_range(1, 100) == 1:
+		$GetAway.pitch_scale = randf_range(0.25, 2)
+		$GetAway.play()
 	rotation.y = lerp_angle(rotation.y, atan2(velocity.x, velocity.z), delta * 5.0)
 	move_and_slide()
 

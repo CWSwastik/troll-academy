@@ -1,9 +1,11 @@
 extends Control
 
+var world_scene = preload("res://scenes/world.tscn")
 
 func _on_start_button_pressed():
+	AudioPlayer.button_click()
 	if Global.intro_played:
-		get_tree().change_scene_to_file("res://scenes/world.tscn")
+		get_tree().change_scene_to_packed(world_scene)
 	else:
 		Global.intro_played = true
 		get_tree().change_scene_to_file("res://scenes/intro.tscn")

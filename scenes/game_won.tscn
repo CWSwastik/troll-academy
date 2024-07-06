@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjxb0xssu1ubi"]
+
+[ext_resource type="Script" path="res://scripts/game_won.gd" id="1_ilsuh"]
+[ext_resource type="FontFile" uid="uid://botx8b7q4m50t" path="res://assets/Fonts/Handlee-Regular.ttf" id="2_roju4"]
+
+[node name="GameWon" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ilsuh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.5
+offset_top = -168.5
+offset_right = 349.5
+offset_bottom = 168.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -217.0
+offset_top = 47.0
+offset_right = 212.0
+offset_bottom = 144.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_roju4")
+theme_override_font_sizes/font_size = 72
+text = "You won!"
+horizontal_alignment = 1
+
+[node name="ReasonLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "You managed to complete all of Metic's Quests!"
+
+[node name="MenuButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -109.0
+offset_right = 101.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Return to Main Menu"
+
+[node name="QuitButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -68.0
+offset_right = 102.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quit"
+
+[connection signal="pressed" from="Panel/MenuButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]

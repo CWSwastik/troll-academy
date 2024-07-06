@@ -71,17 +71,17 @@ transform = Transform3D(-0.997915, 0, -0.0645498, 0, 1, 0, 0.0645498, 0, -0.9979
 [node name="Table4" parent="Objects" instance=ExtResource("2_3y2m2")]
 transform = Transform3D(0.996891, 0, 0.0787897, 0, 1, 0, -0.0787897, 0, 0.996891, -1.11639, -0.434184, -0.791171)
 
-[node name="COMPUTERprinter2" parent="Objects/Table4" instance=ExtResource("7_yk1bc")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.149549, 0)
+[node name="COMPUTERprojector2" parent="Objects/Table4" instance=ExtResource("9_n835a")]
+transform = Transform3D(-1.46716, 0, 0.31215, 0, 1.5, 0, -0.31215, 0, -1.46716, -0.488744, 0.780612, 6.18385)
 
 [node name="Table6" parent="Objects" instance=ExtResource("2_3y2m2")]
 transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -1.11639, 0.0536636, 4.58406)
 
-[node name="COMPUTERprojector2" parent="Objects/Table6" instance=ExtResource("9_n835a")]
-transform = Transform3D(0.130388, 0, 0.991463, 0, 1, 0, -0.991463, 0, 0.130388, -0.551934, 0.195176, 0)
-
 [node name="COMPUTERrouter2" parent="Objects/Table6" instance=ExtResource("10_tv6k5")]
-transform = Transform3D(0.446874, 0, 0.538798, 0, 0.7, 0, -0.538798, 0, 0.446874, 0.518604, 0.157813, 7.15256e-07)
+transform = Transform3D(0.446874, 0, 0.538798, 0, 0.7, 0, -0.538798, 0, 0.446874, 0.518604, 0.157813, 8.34465e-07)
+
+[node name="COMPUTERprinter2" parent="Objects/Table6" instance=ExtResource("7_yk1bc")]
+transform = Transform3D(-0.0525265, 0, 0.664594, 0, 0.666667, 0, -0.664594, 0, -0.0525265, 3.58349, -0.225532, 3.57628e-07)
 
 [node name="Table5" parent="Objects" instance=ExtResource("2_3y2m2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23557, -0.434184, -0.791171)

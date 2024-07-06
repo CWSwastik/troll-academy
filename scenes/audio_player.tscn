@@ -1,0 +1,50 @@
+[gd_scene load_steps=12 format=3 uid="uid://d36qp78sieerk"]
+
+[ext_resource type="Script" path="res://scripts/audio_player.gd" id="1_3fkmg"]
+[ext_resource type="AudioStream" uid="uid://dvuj1b5o61glb" path="res://assets/SFX/music_track.mp3" id="1_git8d"]
+[ext_resource type="AudioStream" uid="uid://b0w8xnlc67pi8" path="res://assets/SFX/ui-click.mp3" id="3_6jdkp"]
+[ext_resource type="AudioStream" uid="uid://o31muo7o62st" path="res://assets/SFX/Metic - Bruh (Meme).wav" id="4_nqcfa"]
+[ext_resource type="AudioStream" uid="uid://j22jyulbcsnq" path="res://assets/SFX/Metic - You Did It Faceless We Did It.wav" id="4_t25p0"]
+[ext_resource type="AudioStream" uid="uid://b8dugp80ds748" path="res://assets/SFX/Metic/Metic - Jackpot Just What We Needed.wav" id="5_56oin"]
+[ext_resource type="AudioStream" uid="uid://dy1wh36iwu1vs" path="res://assets/SFX/Metic/Metic - This Will Come in Handy.wav" id="6_pckim"]
+[ext_resource type="AudioStream" uid="uid://dgyeb2j0c6beb" path="res://assets/SFX/Metic/Metic - Hilarious They're Never Gonna Forget That.wav" id="7_dgaf0"]
+[ext_resource type="AudioStream" uid="uid://ds3ijgvyku6hc" path="res://assets/SFX/Metic/Metic - Nice Job That's How It's Done.wav" id="8_byp7p"]
+[ext_resource type="AudioStream" uid="uid://ddxedj0bno3gh" path="res://assets/SFX/Metic/Metic - Phew That Was a Narrow Escape.wav" id="9_c8fq8"]
+[ext_resource type="AudioStream" uid="uid://csx0mjwqk7txy" path="res://assets/SFX/Metic/Metic - That Was Close You Almost Got Caught.wav" id="10_ayksp"]
+
+[node name="AudioPlayer" type="Node"]
+script = ExtResource("1_3fkmg")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_git8d")
+volume_db = -12.429
+bus = &"BGM"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6jdkp")
+
+[node name="Won" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_t25p0")
+
+[node name="Bruh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nqcfa")
+
+[node name="Metic" type="Node" parent="."]
+
+[node name="Jackpot" type="AudioStreamPlayer" parent="Metic"]
+stream = ExtResource("5_56oin")
+
+[node name="Handy" type="AudioStreamPlayer" parent="Metic"]
+stream = ExtResource("6_pckim")
+
+[node name="Hillarious" type="AudioStreamPlayer" parent="Metic"]
+stream = ExtResource("7_dgaf0")
+
+[node name="NiceJob" type="AudioStreamPlayer" parent="Metic"]
+stream = ExtResource("8_byp7p")
+
+[node name="Phew" type="AudioStreamPlayer" parent="Metic"]
+stream = ExtResource("9_c8fq8")
+
+[node name="Close" type="AudioStreamPlayer" parent="Metic"]
+stream = ExtResource("10_ayksp")

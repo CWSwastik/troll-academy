@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://p63gxltjfkhl"]
+
+[ext_resource type="PackedScene" uid="uid://bo0sn7ou2p0d1" path="res://assets/Items/glue/glue_bottle.glb" id="1_c1mns"]
+[ext_resource type="Script" path="res://scripts/glue.gd" id="1_uk8jb"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xf26q"]
+height = 0.199211
+radius = 0.0436574
+
+[node name="Glue" type="RigidBody3D"]
+script = ExtResource("1_uk8jb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.269992, 0)
+shape = SubResource("CylinderShape3D_xf26q")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_c1mns")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.00196389, 0, 0.00569761)
